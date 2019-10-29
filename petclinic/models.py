@@ -41,8 +41,8 @@ class PetType(models.Model):
 class Pet(models.Model):
     pet_name = models.CharField(max_length=200)
     pet_date_of_birth = models.DateField()
-    pet_type = models.ForeignKey(PetType, on_delete=models.CASCADE)
-    pet_owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
+    pet_type = models.ForeignKey(to=PetType, related_name="pet_type_pets", null=True, blank=True, on_delete=models.CASCADE)
+    pet_owner = models.ForeignKey(to=Owner, related_name="owner_pets", null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.pet_name
@@ -51,7 +51,7 @@ class Pet(models.Model):
 class Visit(models.Model):
     visit_text = models.CharField(max_length=200)
     visit_date = models.DateField()
-    visit_pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
+    visit_pet = models.ForeignKey(to=Pet, related_name="pet_visits", null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.visit_text
