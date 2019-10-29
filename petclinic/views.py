@@ -22,8 +22,7 @@ class SpecialtylView(generic.ListView):
     context_object_name = 'latest_specialty_list'
 
     def get_queryset(self):
-        return Specialty.objects.filter(
-        ).order_by('-specialty_text')[:5]
+        return Specialty.objects.all().order_by('-specialty_text')[:5]
 
 
 class PetTypelView(generic.ListView):
@@ -32,25 +31,40 @@ class PetTypelView(generic.ListView):
     context_object_name = 'latest_petType_list'
 
     def get_queryset(self):
-        return PetType.objects.filter(
-        ).order_by('-petType_text')[:5]
+        return PetType.objects.all().order_by('-petType_text')[:5]
 
 
 class VeterinarianView(generic.ListView):
     model = Veterinarian
     template_name = 'petclinic/veterinarian.html'
+    context_object_name = 'latest_veterinarian_list'
+
+    def get_queryset(self):
+        return Veterinarian.objects.all().order_by('-veterinarian_lastName', "-veterinarian_firstName")[:5]
 
 
 class VisitView(generic.ListView):
     model = Visit
     template_name = 'petclinic/visit.html'
+    context_object_name = 'latest_visit_list'
+
+    def get_queryset(self):
+        return Visit.objects.all().order_by('-visit_date', "-visit_text")[:5]
 
 
 class PetView(generic.ListView):
     model = Pet
     template_name = 'petclinic/pet.html'
+    context_object_name = 'latest_pet_list'
+
+    def get_queryset(self):
+        return Pet.objects.all().order_by('-pet_name', "-pet_dateOfBirth")[:5]
 
 
 class OwnerView(generic.ListView):
     model = Owner
     template_name = 'petclinic/owner.html'
+    context_object_name = 'latest_owner_list'
+
+    def get_queryset(self):
+        return Owner.objects.all().order_by('-owner_lastName', "-owner_firstName")[:5]

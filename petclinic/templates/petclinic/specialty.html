@@ -8,7 +8,7 @@
 {% if latest_specialty_list %}
     <ul>
     {% for specialty in latest_specialty_list %}
-        <li><a href="{% url 'petclinic:specialty' specialty.id %}">{{ specialty.specialty_text}}</a></li>
+        <li><a href="{% url 'petclinic:specialtyForm' specialty.id %}">{{ specialty.specialty_text}}</a></li>
     {% endfor %}
     </ul>
 {% else %}

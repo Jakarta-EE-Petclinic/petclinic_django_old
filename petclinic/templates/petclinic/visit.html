@@ -3,3 +3,13 @@
 <link rel="stylesheet" type="text/css" href="{% static 'petclinic/style.css' %}">
 
 <h1>Visits</h1>
+
+{% if latest_visit_list %}
+    <ul>
+    {% for visit in latest_visit_list %}
+        <li><a href="{% url 'petclinic:visitForm' visit.id %}">{{visit.visit_text}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Specialties are available.</p>
+{% endif %}
