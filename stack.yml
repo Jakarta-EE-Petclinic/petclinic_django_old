@@ -9,8 +9,8 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: djangopwd
-      POSTGRES_USER: django
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespwd
       POSTGRES_DB: django_petclinic
       CHARSET: UTF8
       PGPORT: 5432
@@ -21,8 +21,8 @@ services:
     ports:
       - 5464:5464
     environment:
-      POSTGRES_PASSWORD: djangopwd
-      POSTGRES_USER: django
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespwd
       POSTGRES_DB: django_petclinic_test
       CHARSET: UTF8
       PGPORT: 5464
