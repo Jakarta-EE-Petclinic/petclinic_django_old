@@ -12,7 +12,7 @@ from .models import Pet
 from .models import Owner
 
 
-class IndexView(generic.ListView):
+class IndexView(generic.TemplateView):
     template_name = 'petclinic/index.html'
 
 
