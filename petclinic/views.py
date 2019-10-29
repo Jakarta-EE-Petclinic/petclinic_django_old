@@ -16,55 +16,73 @@ class IndexView(generic.TemplateView):
     template_name = 'petclinic/index.html'
 
 
-class SpecialtylView(generic.ListView):
+class SpecialtyListView(generic.ListView):
     model = Specialty
     template_name = 'petclinic/specialty.html'
-    context_object_name = 'latest_specialty_list'
-
-    def get_queryset(self):
-        return Specialty.objects.get_queryset().order_by('-specialty_text')[:5]
+    context_object_name = 'specialty_list'
 
 
-class PetTypelView(generic.ListView):
+class SpecialtyFormView(generic.FormView):
+    model = Specialty
+    template_name = 'petclinic/specialty_form.html'
+    context_object_name = 'specialty'
+
+
+class PetTypeListView(generic.ListView):
     model = PetType
     template_name = 'petclinic/petType.html'
-    context_object_name = 'latest_petType_list'
-
-    def get_queryset(self):
-        return PetType.objects.get_queryset()[:5]
+    context_object_name = 'pettype_list'
 
 
-class VeterinarianView(generic.ListView):
+class PetTypeFormView(generic.FormView):
+    model = PetType
+    template_name = 'petclinic/pettype_form.html'
+    context_object_name = 'pettype'
+
+
+class VeterinarianListView(generic.ListView):
     model = Veterinarian
     template_name = 'petclinic/veterinarian.html'
-    context_object_name = 'latest_veterinarian_list'
-
-    def get_queryset(self):
-        return Veterinarian.objects.get_queryset()[:5]
+    context_object_name = 'veterinarian_list'
 
 
-class VisitView(generic.ListView):
+class VeterinarianFormView(generic.FormView):
+    model = Veterinarian
+    template_name = 'petclinic/veterinarian_form.html'
+    context_object_name = 'veterinarian'
+
+
+class VisitListView(generic.ListView):
     model = Visit
     template_name = 'petclinic/visit.html'
-    context_object_name = 'latest_visit_list'
-
-    def get_queryset(self):
-        return Visit.objects.get_queryset()[:5]
+    context_object_name = 'visit_list'
 
 
-class PetView(generic.ListView):
+class VisitFormView(generic.FormView):
+    model = Visit
+    template_name = 'petclinic/visit_form.html'
+    context_object_name = 'visit'
+
+
+class PetListView(generic.ListView):
     model = Pet
     template_name = 'petclinic/pet.html'
-    context_object_name = 'latest_pet_list'
-
-    def get_queryset(self):
-        return Pet.objects.get_queryset()[:5]
+    context_object_name = 'pet_list'
 
 
-class OwnerView(generic.ListView):
+class PetFormView(generic.FormView):
+    model = Pet
+    template_name = 'petclinic/pet_form.html'
+    context_object_name = 'pet'
+
+
+class OwnerListView(generic.ListView):
     model = Owner
     template_name = 'petclinic/owner.html'
-    context_object_name = 'latest_owner_list'
+    context_object_name = 'owner_list'
 
-    def get_queryset(self):
-        return Owner.objects.get_queryset()[:5]
+
+class OwnerFormView(generic.FormView):
+    model = Owner
+    template_name = 'petclinic/owner_form.html'
+    context_object_name = 'owner'

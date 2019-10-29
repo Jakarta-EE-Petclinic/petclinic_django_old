@@ -5,10 +5,14 @@
 <h1>Veterinarians</h1>
 
 
-{% if latest_veterinarian_list %}
+{% if veterinarian_list %}
     <ul>
-    {% for veterinarian in latest_veterinarian_list %}
-        <li><a href="{% url 'petclinic:veterinarianForms' veterinarian.id %}">{{ veterinarian.veterinarian_firstName}} {{ veterinarian.veterinarian_lastName}}</a></li>
+    {% for veterinarian in veterinarian_list %}
+        <li>
+            <a href="{% url 'petclinic:veterinarian_forms' veterinarian.id %}">
+                {{ veterinarian.veterinarian_firstName}} {{ veterinarian.veterinarian_lastName}}
+            </a>
+        </li>
     {% endfor %}
     </ul>
 {% else %}

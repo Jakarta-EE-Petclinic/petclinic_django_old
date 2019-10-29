@@ -4,12 +4,14 @@
 
 <h1>Owners</h1>
 
-
-
-{% if latest_owner_list %}
+{% if owner_list %}
     <ul>
-    {% for owner in latest_owner_list %}
-        <li><a href="{% url 'petclinic:ownerForm' owner.id %}">{{ owner.owner_firstName}} {{ owner.owner_lastName}}</a></li>
+    {% for owner in owner_list %}
+        <li>
+            <a href="{% url 'petclinic:owner_form' owner.id %}">
+                {{ owner.owner_firstName}} {{ owner.owner_lastName}}
+            </a>
+        </li>
     {% endfor %}
     </ul>
 {% else %}

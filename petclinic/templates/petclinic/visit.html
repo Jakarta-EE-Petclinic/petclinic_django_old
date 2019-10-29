@@ -7,7 +7,11 @@
 {% if latest_visit_list %}
     <ul>
     {% for visit in latest_visit_list %}
-        <li><a href="{% url 'petclinic:visitForm' visit.id %}">{{visit.visit_text}}</a></li>
+        <li>
+            <a href="{% url 'petclinic:visit_form' visit.id %}">
+                {{visit.visit_text}}
+            </a>
+        </li>
     {% endfor %}
     </ul>
 {% else %}
