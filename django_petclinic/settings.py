@@ -78,8 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django_petclinic',
-        'USER': 'django',
-        'PASSWORD': 'djangopwd',
+        'USER': 'postgres',
+        'PASSWORD': 'postgrespwd',
         'HOST': '127.0.0.1',
         'PORT': '5432',
         'CHARSET': 'UTF8'
@@ -87,8 +87,8 @@ DATABASES = {
     'TEST': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django_petclinic_test',
-        'USER': 'django',
-        'PASSWORD': 'djangopwd',
+        'USER': 'postgres',
+        'PASSWORD': 'postgrespwd',
         'HOST': '127.0.0.1',
         'PORT': '5464',
         'CHARSET': 'UTF8'
