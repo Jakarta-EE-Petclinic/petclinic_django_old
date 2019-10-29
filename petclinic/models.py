@@ -40,7 +40,7 @@ class PetType(models.Model):
 
 class Pet(models.Model):
     pet_name = models.CharField(max_length=200)
-    pet_dateOfBirth = models.DateTimeField('date of birth')
+    pet_dateOfBirth = models.DateField()
     petType = models.ForeignKey(PetType, on_delete=models.CASCADE)
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
 
@@ -50,7 +50,7 @@ class Pet(models.Model):
 
 class Visit(models.Model):
     visit_text = models.CharField(max_length=200)
-    visit_date = models.DateTimeField('date visited')
+    visit_date = models.DateField()
     pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
 
     def __str__(self):
