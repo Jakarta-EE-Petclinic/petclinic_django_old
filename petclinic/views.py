@@ -32,7 +32,7 @@ class SpecialtyForm(generic.FormView):
 
 class PetTypeList(generic.ListView):
     model = PetType
-    template_name = 'petclinic/petType.html'
+    template_name = 'petclinic/pettype.html'
 
 
 class PetTypeForm(generic.FormView):
