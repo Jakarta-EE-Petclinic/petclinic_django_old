@@ -9,6 +9,7 @@ from .models import Owner
 
 from django import forms
 
+
 class IndexView(generic.TemplateView):
     template_name = 'petclinic/index.html'
 
