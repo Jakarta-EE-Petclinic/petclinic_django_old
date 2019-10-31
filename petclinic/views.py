@@ -15,7 +15,7 @@ class IndexView(generic.TemplateView):
 
 
 class SpecialtyInputForm(forms.ModelForm):
-    pass
+    model = Specialty
 
 
 class SpecialtyForm(generic.FormView):
@@ -30,7 +30,7 @@ class SpecialtyList(generic.ListView):
 
 
 class PetTypeInputForm(forms.ModelForm):
-    pass
+    model = PetType
 
 
 class PetTypeForm(generic.FormView):
@@ -45,7 +45,7 @@ class PetTypeList(generic.ListView):
 
 
 class VeterinarianInputForm(forms.ModelForm):
-    pass
+    model = Veterinarian
 
 
 class VeterinarianForm(generic.FormView):
@@ -60,7 +60,7 @@ class VeterinarianList(generic.ListView):
 
 
 class VisitInputForm(generic.FormView):
-    pass
+    model = Visit
 
 
 class VisitForm(generic.FormView):
@@ -75,13 +75,13 @@ class VisitList(generic.ListView):
 
 
 class PetInputForm(generic.FormView):
-    pass
+    model = Pet
 
 
 class PetForm(generic.FormView):
     model = Pet
     template_name = 'petclinic/pet_form.html'
-    form_class = VisitInputForm
+    form_class = PetInputForm
 
 
 class PetList(generic.ListView):
@@ -90,12 +90,13 @@ class PetList(generic.ListView):
 
 
 class OwnerInputForm(generic.FormView):
-    pass
+    model = Owner
 
 
 class OwnerForm(generic.FormView):
     model = Owner
     template_name = 'petclinic/owner_form.html'
+    form_class = OwnerInputForm
 
 
 class OwnerList(generic.ListView):
