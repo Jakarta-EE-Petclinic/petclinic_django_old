@@ -59,7 +59,7 @@ class VeterinarianList(generic.ListView):
     template_name = 'petclinic/veterinarian_list.html'
 
 
-class VisitInputForm(generic.FormView):
+class VisitInputForm(forms.ModelForm):
     model = Visit
 
 
@@ -74,7 +74,7 @@ class VisitList(generic.ListView):
     template_name = 'petclinic/visit_list.html'
 
 
-class PetInputForm(generic.FormView):
+class PetInputForm(forms.ModelForm):
     model = Pet
 
 
@@ -89,7 +89,7 @@ class PetList(generic.ListView):
     template_name = 'petclinic/pet_list.html'
 
 
-class OwnerInputForm(generic.FormView):
+class OwnerInputForm(forms.ModelForm):
     model = Owner
 
 
