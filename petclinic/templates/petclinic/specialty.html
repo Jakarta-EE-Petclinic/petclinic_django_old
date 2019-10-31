@@ -9,7 +9,7 @@
     <ul>
     {% for specialty in specialty_list %}
         <li>
-            <a href="{% url 'petclinic:specialty_form' specialty.id %}">
+            <a href="{% url 'petclinic:specialty' specialty.id %}">
                 {{ specialty.specialty_text}}
             </a>
         </li>

@@ -9,7 +9,7 @@
     {% for owner in owner_list %}
         <li>
             <a href="{% url 'petclinic:owner_form' owner.id %}">
-                {{ owner.owner_firstName}} {{ owner.owner_lastName}}
+                {{ owner.full_name}}
             </a>
         </li>
     {% endfor %}

@@ -10,7 +10,7 @@
     {% for veterinarian in veterinarian_list %}
         <li>
             <a href="{% url 'petclinic:veterinarian_forms' veterinarian.id %}">
-                {{ veterinarian.veterinarian_firstName}} {{ veterinarian.veterinarian_lastName}}
+                {{ veterinarian.full_name}}
             </a>
         </li>
     {% endfor %}
