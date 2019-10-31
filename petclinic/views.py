@@ -15,7 +15,9 @@ class IndexView(generic.TemplateView):
 
 
 class SpecialtyInputForm(forms.ModelForm):
-    model = Specialty
+    class Meta:
+        model = Specialty
+        fields = "__all__"
 
 
 class SpecialtyForm(generic.FormView):
@@ -30,7 +32,9 @@ class SpecialtyList(generic.ListView):
 
 
 class PetTypeInputForm(forms.ModelForm):
-    model = PetType
+    class Meta:
+        model = PetType
+        fields = "__all__"
 
 
 class PetTypeForm(generic.FormView):
@@ -45,7 +49,9 @@ class PetTypeList(generic.ListView):
 
 
 class VeterinarianInputForm(forms.ModelForm):
-    model = Veterinarian
+    class Meta:
+        model = Veterinarian
+        fields = "__all__"
 
 
 class VeterinarianForm(generic.FormView):
@@ -60,7 +66,9 @@ class VeterinarianList(generic.ListView):
 
 
 class VisitInputForm(forms.ModelForm):
-    model = Visit
+    class Meta:
+        model = Visit
+        fields = "__all__"
 
 
 class VisitForm(generic.FormView):
@@ -75,7 +83,9 @@ class VisitList(generic.ListView):
 
 
 class PetInputForm(forms.ModelForm):
-    model = Pet
+    class Meta:
+        model = Pet
+        fields = "__all__"
 
 
 class PetForm(generic.FormView):
@@ -90,7 +100,9 @@ class PetList(generic.ListView):
 
 
 class OwnerInputForm(forms.ModelForm):
-    model = Owner
+    class Meta:
+        model = Owner
+        fields = "__all__"
 
 
 class OwnerForm(generic.FormView):
