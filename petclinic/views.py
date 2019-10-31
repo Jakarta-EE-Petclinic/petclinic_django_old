@@ -7,6 +7,7 @@ from .models import Visit
 from .models import Pet
 from .models import Owner
 
+from django import forms
 
 class IndexView(generic.TemplateView):
     template_name = 'petclinic/index.html'
@@ -17,9 +18,15 @@ class SpecialtyList(generic.ListView):
     template_name = 'petclinic/specialty.html'
 
 
+class SpecialtyInputForm(forms.ModelForm):
+    model = Specialty
+    template_name = 'petclinic/specialty_form.html'
+
+
 class SpecialtyForm(generic.FormView):
     model = Specialty
     template_name = 'petclinic/specialty_form.html'
+    form_class = SpecialtyInputForm
 
 
 class PetTypeList(generic.ListView):
