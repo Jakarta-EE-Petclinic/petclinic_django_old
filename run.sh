@@ -11,3 +11,5 @@ python3 manage.py runserver
 #deactivate
 
 #python manage.py createsuperuser
+
+#python manage.py shell
