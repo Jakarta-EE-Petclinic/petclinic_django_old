@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'generic_scaffold',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Add the parent directory to the sys.path to help development
+import sys
+scaffold_path = os.path.join(BASE_DIR, '..')
+sys.path.insert(1, scaffold_path)

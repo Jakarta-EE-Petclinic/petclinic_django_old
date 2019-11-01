@@ -22,13 +22,13 @@ class SpecialtyInputForm(forms.ModelForm):
 
 class SpecialtyForm(generic.FormView):
     model = Specialty
-    template_name = 'petclinic/specialty_form.html'
+    template_name = 'petclinic/specialtydetail.html'
     form_class = SpecialtyInputForm
 
 
 class SpecialtyList(generic.ListView):
     model = Specialty
-    template_name = 'petclinic/specialty_list.html'
+    template_name = 'petclinic/specialty.html'
 
 
 class PetTypeInputForm(forms.ModelForm):
@@ -39,13 +39,13 @@ class PetTypeInputForm(forms.ModelForm):
 
 class PetTypeForm(generic.FormView):
     model = PetType
-    template_name = 'petclinic/pettype_form.html'
+    template_name = 'petclinic/pettypedetail.html'
     form_class = PetTypeInputForm
 
 
 class PetTypeList(generic.ListView):
     model = PetType
-    template_name = 'petclinic/pettype_list.html'
+    template_name = 'petclinic/pettype.html'
 
 
 class VeterinarianInputForm(forms.ModelForm):
@@ -56,13 +56,13 @@ class VeterinarianInputForm(forms.ModelForm):
 
 class VeterinarianForm(generic.FormView):
     model = Veterinarian
-    template_name = 'petclinic/veterinarian_form.html'
+    template_name = 'petclinic/veterinariandetail.html'
     form_class = VeterinarianInputForm
 
 
 class VeterinarianList(generic.ListView):
     model = Veterinarian
-    template_name = 'petclinic/veterinarian_list.html'
+    template_name = 'petclinic/veterinarian.html'
 
 
 class VisitInputForm(forms.ModelForm):
@@ -73,13 +73,13 @@ class VisitInputForm(forms.ModelForm):
 
 class VisitForm(generic.FormView):
     model = Visit
-    template_name = 'petclinic/visit_form.html'
+    template_name = 'petclinic/visitdetail.html'
     form_class = VisitInputForm
 
 
 class VisitList(generic.ListView):
     model = Visit
-    template_name = 'petclinic/visit_list.html'
+    template_name = 'petclinic/visit.html'
 
 
 class PetInputForm(forms.ModelForm):
@@ -90,13 +90,13 @@ class PetInputForm(forms.ModelForm):
 
 class PetForm(generic.FormView):
     model = Pet
-    template_name = 'petclinic/pet_form.html'
+    template_name = 'petclinic/petdetail.html'
     form_class = PetInputForm
 
 
 class PetList(generic.ListView):
     model = Pet
-    template_name = 'petclinic/pet_list.html'
+    template_name = 'petclinic/pet.html'
 
 
 class OwnerInputForm(forms.ModelForm):
@@ -107,10 +107,10 @@ class OwnerInputForm(forms.ModelForm):
 
 class OwnerForm(generic.FormView):
     model = Owner
-    template_name = 'petclinic/owner_form.html'
+    template_name = 'petclinic/ownerdetail.html'
     form_class = OwnerInputForm
 
 
 class OwnerList(generic.ListView):
     model = Owner
-    template_name = 'petclinic/owner_list.html'
+    template_name = 'petclinic/owner.html'
