@@ -9,6 +9,7 @@ from .models import Owner
 
 from django import forms
 
+
 class IndexView(generic.TemplateView):
     template_name = 'petclinic/index.html'
 
@@ -19,13 +20,14 @@ class SpecialtyList(generic.ListView):
 
 
 class SpecialtyInputForm(forms.ModelForm):
-    model = Specialty
-    template_name = 'petclinic/specialty_form.html'
+    class Meta:
+        model = Specialty
+        fields = '__all__'
 
 
 class SpecialtyForm(generic.FormView):
     model = Specialty
-    template_name = 'petclinic/specialty_form.html'
+    template_name = 'petclinic/specialty_detail.html'
     form_class = SpecialtyInputForm
 
 
@@ -34,9 +36,16 @@ class PetTypeList(generic.ListView):
     template_name = 'petclinic/pettype.html'
 
 
+class PetTypeInputForm(forms.ModelForm):
+    class Meta:
+        model = PetType
+        fields = '__all__'
+
+
 class PetTypeForm(generic.FormView):
     model = PetType
-    template_name = 'petclinic/pettype_form.html'
+    template_name = 'petclinic/pettype_detail.html'
+    form_class = PetTypeInputForm
 
 
 class VeterinarianList(generic.ListView):
@@ -44,9 +53,16 @@ class VeterinarianList(generic.ListView):
     template_name = 'petclinic/veterinarian.html'
 
 
+class VeterinarianInputForm(forms.ModelForm):
+    class Meta:
+        model = Veterinarian
+        fields = '__all__'
+
+
 class VeterinarianForm(generic.FormView):
     model = Veterinarian
-    template_name = 'petclinic/veterinarian_form.html'
+    template_name = 'petclinic/veterinarian_detail.html'
+    form_class = VeterinarianInputForm
 
 
 class VisitList(generic.ListView):
@@ -54,9 +70,16 @@ class VisitList(generic.ListView):
     template_name = 'petclinic/visit.html'
 
 
+class VisitInputForm(forms.ModelForm):
+    class Meta:
+        model = Visit
+        fields = '__all__'
+
+
 class VisitForm(generic.FormView):
     model = Visit
-    template_name = 'petclinic/visit_form.html'
+    template_name = 'petclinic/visit_detail.html'
+    form_class = VisitInputForm
 
 
 class PetList(generic.ListView):
@@ -64,9 +87,16 @@ class PetList(generic.ListView):
     template_name = 'petclinic/pet.html'
 
 
+class PetInputForm(forms.ModelForm):
+    class Meta:
+        model = Pet
+        fields = '__all__'
+
+
 class PetForm(generic.FormView):
     model = Pet
-    template_name = 'petclinic/pet_form.html'
+    template_name = 'petclinic/pet_detail.html'
+    form_class = PetInputForm
 
 
 class OwnerList(generic.ListView):
@@ -74,6 +104,13 @@ class OwnerList(generic.ListView):
     template_name = 'petclinic/owner.html'
 
 
+class OwnerInputForm(forms.ModelForm):
+    class Meta:
+        model = Owner
+        fields = '__all__'
+
+
 class OwnerForm(generic.FormView):
     model = Owner
-    template_name = 'petclinic/owner_form.html'
+    template_name = 'petclinic/owner_detail.html'
+    form_class = OwnerInputForm

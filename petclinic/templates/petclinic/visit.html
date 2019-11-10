@@ -8,7 +8,7 @@
     <ul>
     {% for visit in visit_list %}
         <li>
-            <a href="{% url 'petclinic:visit_form' visit.id %}">
+            <a href="{% url 'petclinic:visit_detail' visit.id %}">
                 {{visit.visit_text}}
             </a>
         </li>

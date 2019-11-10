@@ -8,7 +8,7 @@
     <ul>
     {% for owner in owner_list %}
         <li>
-            <a href="{% url 'petclinic:owner_form' owner.id %}">
+            <a href="{% url 'petclinic:owner_detail' owner.id %}">
                 {{ owner.full_name}}
             </a>
         </li>

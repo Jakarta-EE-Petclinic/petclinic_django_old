@@ -8,7 +8,7 @@
 {% if pettype_list %}
     <ul>
     {% for pettype in pettype_list %}
-        <li><a href="{% url 'petclinic:pettype_form' pettype.id %}">{{ pettype.pet_type_text}}</a></li>
+        <li><a href="{% url 'petclinic:pettype_detail' pettype.id %}">{{ pettype.pet_type_text}}</a></li>
     {% endfor %}
     </ul>
 {% else %}
