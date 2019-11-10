@@ -1,4 +1,8 @@
 #!/usr/bin/env zsh
 
-python manage.py makemigrations
-python manage.py migrate
+source venv/bin/activate
+
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+deactivate
