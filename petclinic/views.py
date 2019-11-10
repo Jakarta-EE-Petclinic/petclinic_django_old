@@ -1,3 +1,5 @@
+from django.http import Http404
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 
 from .models import Specialty
@@ -29,6 +31,14 @@ class SpecialtyForm(generic.FormView):
     model = Specialty
     template_name = 'petclinic/specialty_detail.html'
     form_class = SpecialtyInputForm
+
+
+class SpecialtyDetail(generic.DetailView):
+    model = Specialty
+    template_name = 'petclinic/specialty_detail.html'
+
+    def get_object(self):
+        return get_object_or_404(Specialty, pk=self.request.user.id)
 
 
 class PetTypeList(generic.ListView):
