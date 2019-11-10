@@ -3,3 +3,22 @@
 <link rel="stylesheet" type="text/css" href="{% static 'petclinic/style.css' %}">
 
 <h1>Veterinarian D</h1>
+
+<ul>
+    <li> {{ veterinarian.id}} </li>
+    <li> {{ veterinarian.veterinarian_first_name}} </li>
+    <li> {{ veterinarian.veterinarian_last_name}} </li>
+    {% if veterinarian.veterinarian_specialties %}
+    <li>
+        <ul>
+        {% for specialty in veterinarian.veterinarian_specialties.all %}
+            <li>
+                <a href="{% url 'petclinic:specialty_detail' specialty.id %}">
+                    {{ specialty.specialty_text}}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </li>
+    {% endif %}
+</ul>
