@@ -12,9 +12,9 @@ urlpatterns = [
     path('veterinarian/', views.VeterinarianList.as_view(), name='veterinarian'),
     path('veterinarian/<int:id>/', views.VeterinarianDetail.as_view(), name='veterinarian_detail'),
     path('visit/', views.VisitList.as_view(), name='visit'),
-    path('visit/<int:id>', views.VisitForm.as_view(), name='visit_detail'),
+    path('visit/<int:id>', views.VisitDetail.as_view(), name='visit_detail'),
     path('pet/', views.PetList.as_view(), name='pet'),
-    path('pet/<int:id>', views.PetForm.as_view(), name='pet_detail'),
+    path('pet/<int:id>', views.PetDetail.as_view(), name='pet_detail'),
     path('owner/', views.OwnerList.as_view(), name='owner'),
-    path('owner/<int:id>', views.OwnerForm.as_view(), name='owner_detail'),
+    path('owner/<int:id>', views.OwnerDetail.as_view(), name='owner_detail'),
 ]

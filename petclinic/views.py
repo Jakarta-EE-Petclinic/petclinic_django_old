@@ -108,6 +108,14 @@ class VisitForm(generic.FormView):
     form_class = VisitInputForm
 
 
+class VisitDetail(generic.DetailView):
+    model = Visit
+    template_name = 'petclinic/visit_detail.html'
+
+    def get_object(self):
+        return get_object_or_404(Visit, pk=self.request.user.id)
+
+
 class PetList(generic.ListView):
     model = Pet
     template_name = 'petclinic/pet.html'
@@ -125,6 +133,14 @@ class PetForm(generic.FormView):
     form_class = PetInputForm
 
 
+class PetDetail(generic.DetailView):
+    model = Pet
+    template_name = 'petclinic/pet_detail.html'
+
+    def get_object(self):
+        return get_object_or_404(Pet, pk=self.request.user.id)
+
+
 class OwnerList(generic.ListView):
     model = Owner
     template_name = 'petclinic/owner.html'
@@ -140,3 +156,11 @@ class OwnerForm(generic.FormView):
     model = Owner
     template_name = 'petclinic/owner_detail.html'
     form_class = OwnerInputForm
+
+
+class OwnerDetail(generic.DetailView):
+    model = Owner
+    template_name = 'petclinic/owner_detail.html'
+
+    def get_object(self):
+        return get_object_or_404(Owner, pk=self.request.user.id)
