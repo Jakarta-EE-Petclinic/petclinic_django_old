@@ -36,7 +36,9 @@ class SpecialtyForm(generic.FormView):
 class SpecialtyDetail(generic.DetailView):
     model = Specialty
     template_name = 'petclinic/specialty_detail.html'
-    # queryset = Specialty.objects.all()
+
+    def get_object(self):
+        return get_object_or_404(Specialty, pk=self.request.user.id)
 
 
 class PetTypeList(generic.ListView):
