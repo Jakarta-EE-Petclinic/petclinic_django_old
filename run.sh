@@ -36,5 +36,9 @@ function runserver() {
   deactivate
 }
 
+update_model
+
 runserver
+
+#run_docker
 
